@@ -1,0 +1,5 @@
+requests==2.9.1
+twitter==1.18.0
+peewee==2.10.2
+mysqlclient==1.3.12
+feedparser==5.1.3
