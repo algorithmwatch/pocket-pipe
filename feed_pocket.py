@@ -17,7 +17,7 @@ twitter_secret = os.environ["twitter_secret"]
 
 # Number of words to read per day. 
 # 8000 words is about 40 minutes at 200 words per minute.
-daily_read = 8000
+daily_read = 10000
 
 # How often the script should run per day.
 # Works with 1, 2, 4, 6, 8, 12 and 24.
