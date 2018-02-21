@@ -47,6 +47,8 @@ blacklisted_urls = [
 , "legorafi.fr", "theonion.com"          # Parody
 , "observablehq.com"                     # Does not render on Pocket's browser
 , "mindnews.fr"							 # Hard paywall
+, "haaretz"								 # Paywall
+, ".pdf"								 # Doesn't read well on Pocket
 ]
 
 def dbInit():
