@@ -17,7 +17,7 @@ twitter_secret = os.environ["twitter_secret"]
 
 # Number of words to read per day. 
 # 8000 words is about 40 minutes at 200 words per minute.
-daily_read = 10000
+daily_read = 8000
 
 # How often the script should run per day.
 # Works with 1, 2, 4, 6, 8, 12 and 24.
@@ -42,7 +42,12 @@ twitter_lists = [{"id": 45745119, "slug": "✭✭✭✭"}]
 
 # List of websites that you do not want to read from.
 # Removing Twitter ensures that you won't be given linked tweets.
-blacklisted_urls = ["https://twitter.com", "legorafi.fr", "theonion.com"]
+blacklisted_urls = [
+  "https://twitter.com"                  # Embedded tweets
+, "legorafi.fr", "theonion.com"          # Parody
+, "observablehq.com"                     # Does not render on Pocket's browser
+, "mindnews.fr"							 # Hard paywall
+]
 
 def dbInit():
     if 'CLEARDB_DATABASE_URL' in os.environ:
