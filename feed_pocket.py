@@ -129,12 +129,9 @@ def selectLink():
 	urls = checkTwitter()
 	total_word_count = 0
 	total_articles = 0
-	while total_word_count < (daily_read / daily_checks) and total_articles <= 3:
+	for i in range(0,3):
 		url = random.choice(urls)
-		added_url = add(url["url"], url["username"])
-		if added_url and "word_count" in added_url and added_url["word_count"] != None:
-			total_word_count += int(added_url["word_count"])
-			total_articles += 1
+		add(url["url"], url["username"])
 
 if __name__ == "__main__":
     now = dt.datetime.utcnow()
