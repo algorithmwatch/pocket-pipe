@@ -15,10 +15,6 @@ twitter_access_secret = os.environ["twitter_access_secret"]
 twitter_key = os.environ["twitter_key"]
 twitter_secret = os.environ["twitter_secret"]
 
-# Number of words to read per day. 
-# 8000 words is about 40 minutes at 200 words per minute.
-daily_read = 8000
-
 # How often the script should run per day.
 # Works with 1, 2, 4, 6, 8, 12 and 24.
 daily_checks = 4
@@ -127,11 +123,11 @@ def checkTwitter():
 
 def selectLink():
 	urls = checkTwitter()
-	total_word_count = 0
 	total_articles = 0
-	for i in range(0,3):
+	while total_articles < 3:
 		url = random.choice(urls)
-		add(url["url"], url["username"])
+		if add(url["url"], url["username"]):
+			total_articles += 1
 
 if __name__ == "__main__":
     now = dt.datetime.utcnow()
