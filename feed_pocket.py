@@ -15,9 +15,8 @@ twitter_access_secret = os.environ["twitter_access_secret"]
 twitter_key = os.environ["twitter_key"]
 twitter_secret = os.environ["twitter_secret"]
 
-# How often the script should run per day.
-# Works with 1, 2, 4, 6, 8, 12 and 24.
-daily_checks = 4
+# Maximum number of unread articles to be shown in your Pocket
+max_articles = 10
 
 # Your RSS feed, exported from Bloglines
 rss_feeds = ["http://blog.nkb.fr/atom.xml"
@@ -45,6 +44,7 @@ blacklisted_urls = [
 , "mindnews.fr"							 # Hard paywall
 , "haaretz"								 # Paywall
 , ".pdf"								 # Doesn't read well on Pocket
+, "paper.li"							 # Not interesting
 ]
 
 def dbInit():
@@ -121,17 +121,21 @@ def checkTwitter():
 
 	return urls
 
+def countUnreads():
+	url = "https://getpocket.com/v3/get"
+	r  = requests.post(url, data={"consumer_key": consumer_key, "access_token": access_token})
+	data = json.loads(r.text)
+	unread_items = data["list"]
+	return len(unread_items)
+
 def selectLink():
 	urls = checkTwitter()
-	total_articles = 0
-	while total_articles < 3:
+	unread_items = countUnreads()
+	while unread_items <= max_articles:
 		url = random.choice(urls)
 		if add(url["url"], url["username"]):
 			total_articles += 1
 
 if __name__ == "__main__":
-    now = dt.datetime.utcnow()
-    current_hour = now.hour
-    if current_hour % (24 / daily_checks) == 0:
-        selectLink()
-        checkRSS()
+    selectLink()
+    checkRSS()
