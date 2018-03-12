@@ -138,5 +138,8 @@ def selectLink():
 			unread_items += 1
 
 if __name__ == "__main__":
-    selectLink()
-    checkRSS()
+    now = dt.datetime.utcnow()
+    current_hour = now.hour
+    if current_hour % 6 == 0:
+	    selectLink()
+	    checkRSS()
