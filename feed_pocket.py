@@ -16,7 +16,7 @@ twitter_key = os.environ["twitter_key"]
 twitter_secret = os.environ["twitter_secret"]
 
 # Maximum number of unread articles to be shown in your Pocket
-max_articles = 10
+max_articles = 7
 
 # Your RSS feed, exported from Bloglines
 rss_feeds = ["http://blog.nkb.fr/atom.xml"
