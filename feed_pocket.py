@@ -45,6 +45,7 @@ blacklisted_urls = [
 , "haaretz"								 # Paywall
 , ".pdf"								 # Doesn't read well on Pocket
 , "paper.li"							 # Not interesting
+, "instagram.com"						 # Not interesting & doesn't render well
 ]
 
 def dbInit():
