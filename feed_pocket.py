@@ -134,7 +134,7 @@ def selectLink():
 	while unread_items <= max_articles:
 		url = random.choice(urls)
 		if add(url["url"], url["username"]):
-			total_articles += 1
+			unread_items += 1
 
 if __name__ == "__main__":
     selectLink()
