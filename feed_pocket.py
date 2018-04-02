@@ -30,7 +30,8 @@ rss_feeds = ["http://blog.nkb.fr/atom.xml"
 ,"https://gabriel-et-tristan.blogspot.com/feeds/posts/default"
 ,"http://www.maartenlambrechts.com/feed.xml"
 ,"https://www.youtube.com/feeds/videos.xml?channel_id=UCmY71FGkk5kMwde_TP3KbnQ"
-,"https://www.youtube.com/feeds/videos.xml?channel_id=UC3XTzVzaHQEd30rQbuvCtTQ"]
+,"https://www.youtube.com/feeds/videos.xml?channel_id=UC3XTzVzaHQEd30rQbuvCtTQ"
+,"https://artblart.com/feed/"]
 
 # The Twitter lists to pull links from
 twitter_lists = [{"id": 45745119, "slug": "✭✭✭✭"}]
