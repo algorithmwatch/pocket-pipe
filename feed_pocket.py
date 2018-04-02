@@ -46,6 +46,7 @@ blacklisted_urls = [
 , ".pdf"								 # Doesn't read well on Pocket
 , "paper.li"							 # Not interesting
 , "instagram.com"						 # Not interesting & doesn't render well
+, "docs.google.com"                      # Mostly job descriptions
 ]
 
 def dbInit():
@@ -86,7 +87,7 @@ def add(link, from_tag = None):
 
 		r  = requests.post(url, data={"url": link, "tags": from_tag, "consumer_key": consumer_key, "access_token": access_token})
 		data = json.loads(r.text)
-		
+
 		if data["status"] == 1:
 			print("Added %s. Word count %s" % (data["item"]["title"], data["item"]["word_count"]))
 			return data["item"]
