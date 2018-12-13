@@ -31,7 +31,8 @@ rss_feeds = ["http://blog.nkb.fr/atom.xml"
 ,"http://www.maartenlambrechts.com/feed.xml"
 ,"https://www.youtube.com/feeds/videos.xml?channel_id=UCmY71FGkk5kMwde_TP3KbnQ"
 ,"https://www.youtube.com/feeds/videos.xml?channel_id=UC3XTzVzaHQEd30rQbuvCtTQ"
-,"https://artblart.com/feed/"]
+,"https://artblart.com/feed/"
+,"http://authueil.fr/feed/rss2"]
 
 # The Twitter lists to pull links from
 twitter_lists = [{"id": 45745119, "slug": "✭✭✭✭"}]
