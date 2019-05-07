@@ -20,6 +20,7 @@ max_articles = 7
 
 # Your RSS feed, exported from Bloglines
 rss_feeds = ["http://blog.nkb.fr/atom.xml"
+,"https://jasoncollins.blog/feed/"
 ,"https://ecointerview.wordpress.com/feed/"
 ,"http://tumourrasmoinsbete.blogspot.com/feeds/posts/default"
 ,"https://xkcd.com/rss.xml"
