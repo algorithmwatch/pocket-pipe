@@ -50,6 +50,7 @@ blacklisted_urls = [
 , "paper.li"							 # Not interesting
 , "instagram.com"						 # Not interesting & doesn't render well
 , "docs.google.com"                      # Mostly job descriptions
+, "bloomberg.com"						 # fails to open / are you a robot
 ]
 
 def dbInit():
