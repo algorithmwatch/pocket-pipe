@@ -86,11 +86,11 @@ def checkRSS():
 	successfully_parsed = 0
 	for country in countries:
 		country_tag = country["name"]
-			for rss_feed in country["rss_feeds"]:
-				d = feedparser.parse(rss_feed)
-				for entry in d.entries[0:5]:
-					add(entry.link, country_tag)
-					successfully_parsed += 1
+		for rss_feed in country["rss_feeds"]:
+			d = feedparser.parse(rss_feed)
+			for entry in d.entries[0:5]:
+				add(entry.link, country_tag)
+				successfully_parsed += 1
 
 	return successfully_parsed
 
