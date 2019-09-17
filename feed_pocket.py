@@ -100,7 +100,7 @@ def checkTwitter():
 
 	urls = []
 
-	for twitter_list in twitter_lists:
+	for country in countries:
 		for tweet in t.search.tweets(q="filter:links %s" % country["twitter_query"], count=10):
 			if "urls" in tweet["entities"]:
 				for url in tweet["entities"]["urls"]:
