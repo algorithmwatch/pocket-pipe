@@ -190,6 +190,6 @@ def addLinks():
 if __name__ == "__main__":
 	now = dt.datetime.utcnow()
 	current_hour = now.hour
-	if current_hour % 1 == 0:
+	if current_hour % 8 == 0:
 		addLinks()
 		checkRSS()
