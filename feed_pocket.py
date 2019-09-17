@@ -16,42 +16,23 @@ twitter_key = os.environ["twitter_key"]
 twitter_secret = os.environ["twitter_secret"]
 
 # Maximum number of unread articles to be shown in your Pocket
-max_articles = 7
+max_articles = 100
 
 # Your RSS feed, exported from Bloglines
-rss_feeds = ["http://blog.nkb.fr/atom.xml"
-,"https://jasoncollins.blog/feed/"
-,"https://ecointerview.wordpress.com/feed/"
-,"http://tumourrasmoinsbete.blogspot.com/feeds/posts/default"
-,"https://xkcd.com/rss.xml"
-,"https://www.schneier.com/blog/atom.xml"
-,"https://blog.barbayellow.com/feed/"
-,"http://border1871.hypotheses.org/feed"
-,"https://lavoiedelepee.blogspot.com/feeds/posts/default"
-,"https://gabriel-et-tristan.blogspot.com/feeds/posts/default"
-,"http://www.maartenlambrechts.com/feed.xml"
-,"https://www.youtube.com/feeds/videos.xml?channel_id=UCmY71FGkk5kMwde_TP3KbnQ"
-,"https://www.youtube.com/feeds/videos.xml?channel_id=UC3XTzVzaHQEd30rQbuvCtTQ"
-,"https://artblart.com/feed/"
-,"http://authueil.fr/feed/rss2"
-,"http://kenalbala.blogspot.com/feeds/posts/default"]
-
-# The Twitter lists to pull links from
-twitter_lists = [{"id": 45745119, "slug": "✭✭✭✭"}]
+countries = [
+	{
+		"name": "France",
+		"twitter_query": '("politique" AND "algorithme")  OR "police prédictive" OR "décision automatisée"',
+		"rss_feeds": [
+			"https://technopolice.fr/feed/"
+		]
+	 }
+]
 
 # List of websites that you do not want to read from.
 # Removing Twitter ensures that you won't be given linked tweets.
 blacklisted_urls = [
   "https://twitter.com"                  # Embedded tweets
-, "legorafi.fr", "theonion.com"          # Parody
-, "observablehq.com"                     # Does not render on Pocket's browser
-, "mindnews.fr"							 # Hard paywall
-, "haaretz"								 # Paywall
-, ".pdf"								 # Doesn't read well on Pocket
-, "paper.li"							 # Not interesting
-, "instagram.com"						 # Not interesting & doesn't render well
-, "docs.google.com"                      # Mostly job descriptions
-, "bloomberg.com"						 # fails to open / are you a robot
 ]
 
 def dbInit():
@@ -90,7 +71,7 @@ def add(link, from_tag = None):
 	if checkDuplicate(link):
 		url = "https://getpocket.com/v3/add"
 
-		r  = requests.post(url, data={"url": link, "tags": from_tag, "consumer_key": consumer_key, "access_token": access_token})
+		r  = requests.post(url, data={"url": link, "tags": country_tag, "consumer_key": consumer_key, "access_token": access_token})
 		data = json.loads(r.text)
 
 		if data["status"] == 1:
@@ -103,11 +84,13 @@ def add(link, from_tag = None):
 
 def checkRSS():
 	successfully_parsed = 0
-	for rss_feed in rss_feeds:
-		d = feedparser.parse(rss_feed)
-		for entry in d.entries[0:5]:
-			add(entry.link, "RSS")
-			successfully_parsed += 1
+	for country in countries:
+		country_tag = country["name"]
+			for rss_feed in country["rss_feeds"]:
+				d = feedparser.parse(rss_feed)
+				for entry in d.entries[0:5]:
+					add(entry.link, country_tag)
+					successfully_parsed += 1
 
 	return successfully_parsed
 
@@ -118,13 +101,11 @@ def checkTwitter():
 	urls = []
 
 	for twitter_list in twitter_lists:
-		for tweet in t.lists.statuses(list_id=twitter_list["id"], slug=twitter_list["slug"], count=500):
-			tweet_user = tweet["user"]["screen_name"]
-			tweet_user = "@" + tweet_user
+		for tweet in t.search.tweets(q="filter:links %s" % country["twitter_query"], count=10):
 			if "urls" in tweet["entities"]:
 				for url in tweet["entities"]["urls"]:
 					if not any(x in url["expanded_url"] for x in blacklisted_urls):
-						urls.append({"url": url["expanded_url"], "username": tweet_user})
+						urls.append({"url": url["expanded_url"], "country_tag": country["name"]})
 
 	return urls
 
@@ -135,13 +116,13 @@ def countUnreads():
 	unread_items = data["list"]
 	return len(unread_items)
 
-def selectLink():
+def addLinks():
 	urls = checkTwitter()
 	unread_items = countUnreads()
-	while unread_items <= max_articles:
-		url = random.choice(urls)
-		if add(url["url"], url["username"]):
-			unread_items += 1
+	for url in urls:
+		if unread_items <= max_articles:
+			if add(url["url"], url["country_tag"]):
+				unread_items += 1
 
 if __name__ == "__main__":
     now = dt.datetime.utcnow()
