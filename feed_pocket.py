@@ -6,7 +6,7 @@ from twitter import *
 import urllib.parse as urlparse
 
 if 'CLEARDB_DATABASE_URL' not in os.environ:
-    from playhouse.sqlite_ext import SqliteExtDatabase
+	from playhouse.sqlite_ext import SqliteExtDatabase
 
 access_token = os.environ["access_token"]
 consumer_key = os.environ["consumer_key"]
@@ -21,18 +21,80 @@ max_articles = 100
 # Your RSS feed, exported from Bloglines
 countries = [
 	{
-		"name": "France",
+		"name": "Czech",
+		"twitter_query": '("politika" AND "algoritmus")  OR ("rozhodnutí" AND "algoritmus")  OR "prediktivní policie"',
+		"rss_feeds": []
+	},
+	{
+		"name": "Danish",
+		"twitter_query": '("afgørelse" AND "algoritme")  OR ("politik" AND "algoritme")  OR "forudsigeligt politi"',
+		"rss_feeds": []
+	},
+	{
+		"name": "Dutch",
+		"twitter_query": '("besluit" AND "algoritme")  OR ("politiek" AND "algoritme")  OR "voorspellende politie"',
+		"rss_feeds": []
+	},
+	{
+		"name": "English",
+		"twitter_query": '"automated decision making"  OR "automated decision-making"  OR "algocracy"  OR "algorithmic governance"',
+		"rss_feeds": []
+	},
+	{
+		"name": "French",
 		"twitter_query": '("politique" AND "algorithme")  OR "police prédictive" OR "décision automatisée"',
 		"rss_feeds": [
 			"https://technopolice.fr/feed/"
 		]
+	},
+	{
+		"name": "German",
+		"twitter_query": '("algorithmen" AND "politik")  OR ("entscheidung" AND "algorithmus")',
+		"rss_feeds": []
+	},
+	{
+		"name": "Hungarian",
+		"twitter_query": '("automatizált" AND "algoritmus")  OR ("döntés" AND "algoritmus")  OR "prediktív rendőrség"',
+		"rss_feeds": []
+	},
+	{
+		"name": "Italian",
+		"twitter_query": '("algoritmo" AND "decisione")  OR ("algoritmo" AND "politica") OR "polizia predittiva"',
+		"rss_feeds": []
+	},
+	{
+		"name": "Polish",
+		"twitter_query": '("algorytm" AND "decyzja")  OR ("algorytm" AND "polityka") OR "prognozowanie policji"',
+		"rss_feeds": [
+			"https://www.sztucznainteligencja.org.pl/tematy/ludzie/spoleczenstwo/feed/"
+		]
+	},
+	{
+		"name": "Romanian",
+		"twitter_query": '("algoritmul" AND "decizie")  OR ("algoritmul" AND "politică") OR "previziune poliție"',
+		"rss_feeds": []
+	},
+	{
+		"name": "Slovak",
+		"twitter_query": '("politický" AND "algoritmus")  OR ("rozhodnutie" AND "algoritmus") OR "prediktívne policajné"',
+		"rss_feeds": []
+	},
+	{
+		"name": "Spanish",
+		"twitter_query": '("decisión" AND "algoritmo")  OR ("política" AND "algoritmo")  OR "policía predictiva"',
+		"rss_feeds": []
+	},
+	{
+		"name": "Swedish",
+		"twitter_query": '("beslut" AND "algoritm")  OR ("politik" AND "algoritm")  OR "prediktiv polis"',
+		"rss_feeds": []
 	 }
 ]
 
 # List of websites that you do not want to read from.
 # Removing Twitter ensures that you won't be given linked tweets.
 blacklisted_urls = [
-  "https://twitter.com"                  # Embedded tweets
+  "https://twitter.com"	             # Embedded tweets
 ]
 
 def dbInit():
@@ -67,7 +129,7 @@ def checkDuplicate(link):
         return False
         pass
 
-def add(link, from_tag = None):
+def add(link, country_tag = None):
 	if checkDuplicate(link):
 		url = "https://getpocket.com/v3/add"
 
@@ -101,7 +163,8 @@ def checkTwitter():
 	urls = []
 
 	for country in countries:
-		for tweet in t.search.tweets(q="filter:links %s" % country["twitter_query"], count=10):
+		response = t.search.tweets(q="filter:links %s" % country["twitter_query"], count=100)
+		for tweet in response["statuses"]:
 			if "urls" in tweet["entities"]:
 				for url in tweet["entities"]["urls"]:
 					if not any(x in url["expanded_url"] for x in blacklisted_urls):
@@ -125,9 +188,8 @@ def addLinks():
 				unread_items += 1
 
 if __name__ == "__main__":
-    now = dt.datetime.utcnow()
-    current_hour = now.hour
-    if current_hour % 6 == 0:
-    	pass
-    addLinks()
-    checkRSS()
+	now = dt.datetime.utcnow()
+	current_hour = now.hour
+	if current_hour % 1 == 0:
+		addLinks()
+		checkRSS()
