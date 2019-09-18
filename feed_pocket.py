@@ -114,7 +114,7 @@ def dbInit():
         class Meta:
             primary_key = CompositeKey('url')
 
-    db.connect()
+    db.connect(reuse_if_open=True)
     db.create_tables([Link], safe=True)
 
     return Link
