@@ -4,6 +4,7 @@ import peewee
 from peewee import *
 from twitter import *
 import urllib.parse as urlparse
+from sys import argv
 
 if 'CLEARDB_DATABASE_URL' not in os.environ:
 	from playhouse.sqlite_ext import SqliteExtDatabase
@@ -188,8 +189,14 @@ def addLinks():
 				unread_items += 1
 
 if __name__ == "__main__":
+
+	force = False
+	for arg in argv:
+		if arg == "force":
+			force = True
+
 	now = dt.datetime.utcnow()
 	current_hour = now.hour
-	if current_hour % 8 == 0:
+	if current_hour % 8 == 0 or force:
 		addLinks()
 		checkRSS()
