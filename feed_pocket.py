@@ -38,7 +38,7 @@ countries = [
 	},
 	{
 		"name": "English",
-		"twitter_query": '"automated decision making"  OR "automated decision-making"  OR "algocracy"  OR "algorithmic governance"',
+		"twitter_query": '"automated decision making" OR "automated decision-making" OR "algocracy"  OR "algorithmic governance"',
 		"rss_feeds": []
 	},
 	{
@@ -50,7 +50,7 @@ countries = [
 	},
 	{
 		"name": "German",
-		"twitter_query": '("algorithmen" AND "politik")  OR ("entscheidung" AND "algorithmus")',
+		"twitter_query": '("algorithmen" AND "arbeitsmarkt") OR ("algorithmen" AND "politik")  OR ("entscheidung" AND "algorithmus")',
 		"rss_feeds": []
 	},
 	{
@@ -164,7 +164,7 @@ def checkTwitter():
 	urls = []
 
 	for country in countries:
-		response = t.search.tweets(q="filter:links %s" % country["twitter_query"], count=100)
+		response = t.search.tweets(q="filter:links %s" % country["twitter_query"], count=200)
 		for tweet in response["statuses"]:
 			if "urls" in tweet["entities"]:
 				for url in tweet["entities"]["urls"]:
