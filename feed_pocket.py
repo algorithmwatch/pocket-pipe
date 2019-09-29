@@ -38,12 +38,12 @@ countries = [
 	},
 	{
 		"name": "English",
-		"twitter_query": '"automated decision making" OR "automated decision-making" OR "algocracy"  OR "algorithmic governance"',
+		"twitter_query": '"automated decision making" OR "automated decision-making" OR "algocracy"  OR "algorithmic governance" OR ("AI" and "job interview")',
 		"rss_feeds": []
 	},
 	{
 		"name": "French",
-		"twitter_query": '("politique" AND "algorithme")  OR "police prédictive" OR "décision automatisée"',
+		"twitter_query": '("algorithme" AND "travail") OR ("politique" AND "algorithme")  OR "police prédictive" OR "décision automatisée"',
 		"rss_feeds": [
 			"https://technopolice.fr/feed/"
 		]
