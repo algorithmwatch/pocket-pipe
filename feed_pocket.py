@@ -19,21 +19,20 @@ twitter_secret = os.environ["twitter_secret"]
 # Maximum number of unread articles to be shown in your Pocket
 max_articles = 100
 
-# Your RSS feed, exported from Bloglines
 countries = [
 	{
 		"name": "Czech",
-		"twitter_query": '("politika" AND "algoritmus")  OR ("rozhodnutí" AND "algoritmus")  OR "prediktivní policie"',
+		"twitter_query": '("politika" AND "algoritmus")  OR ("rozhodnutí" AND "algoritmus")  OR "prediktivní policie" OR "rozpoznávání tváře"',
 		"rss_feeds": []
 	},
 	{
 		"name": "Danish",
-		"twitter_query": '("afgørelse" AND "algoritme")  OR ("politik" AND "algoritme")  OR "forudsigeligt politi"',
+		"twitter_query": '("afgørelse" AND "algoritme")  OR ("politik" AND "algoritme")  OR "forudsigeligt politi" OR "ansigtsgenkendelse"',
 		"rss_feeds": []
 	},
 	{
 		"name": "Dutch",
-		"twitter_query": '("besluit" AND "algoritme")  OR ("politiek" AND "algoritme")  OR "voorspellende politie"',
+		"twitter_query": '("besluit" AND "algoritme")  OR ("politiek" AND "algoritme")  OR "voorspellende politie" OR "Gezichtsherkenning"',
 		"rss_feeds": []
 	},
 	{
@@ -43,36 +42,36 @@ countries = [
 	},
 	{
 		"name": "French",
-		"twitter_query": '("algorithme" AND "travail") OR ("politique" AND "algorithme")  OR "police prédictive" OR "décision automatisée"',
+		"twitter_query": '("algorithme" AND "travail") OR ("politique" AND "algorithme")  OR "police prédictive" OR "décision automatisée" OR "reconnaissance faciale"',
 		"rss_feeds": [
 			"https://technopolice.fr/feed/"
 		]
 	},
 	{
 		"name": "German",
-		"twitter_query": '("algorithmen" AND "arbeitsmarkt") OR ("algorithmen" AND "politik")  OR ("entscheidung" AND "algorithmus")',
+		"twitter_query": '("algorithmen" AND "arbeitsmarkt") OR ("algorithmen" AND "politik")  OR ("entscheidung" AND "algorithmus") OR "Gesichtserkennung"',
 		"rss_feeds": []
 	},
 	{
 		"name": "Hungarian",
-		"twitter_query": '("automatizált" AND "algoritmus")  OR ("döntés" AND "algoritmus")  OR "prediktív rendőrség"',
+		"twitter_query": '("automatizált" AND "algoritmus")  OR ("döntés" AND "algoritmus")  OR "prediktív rendőrség" OR "arcfelismerő"',
 		"rss_feeds": []
 	},
 	{
 		"name": "Italian",
-		"twitter_query": '("algoritmo" AND "decisione")  OR ("algoritmo" AND "politica") OR "polizia predittiva"',
+		"twitter_query": '("algoritmo" AND "decisione")  OR ("algoritmo" AND "politica") OR "polizia predittiva" OR "riconoscimento facciale"',
 		"rss_feeds": []
 	},
 	{
 		"name": "Polish",
-		"twitter_query": '("algorytm" AND "decyzja")  OR ("algorytm" AND "polityka") OR "prognozowanie policji"',
+		"twitter_query": '("algorytm" AND "decyzja")  OR ("algorytm" AND "polityka") OR "prognozowanie policji" OR "rozpoznawania rysów twarzy"',
 		"rss_feeds": [
 			"https://www.sztucznainteligencja.org.pl/tematy/ludzie/spoleczenstwo/feed/"
 		]
 	},
 	{
 		"name": "Romanian",
-		"twitter_query": '("algoritmul" AND "decizie")  OR ("algoritmul" AND "politică") OR "previziune poliție"',
+		"twitter_query": '("algoritmul" AND "decizie")  OR ("algoritmul" AND "politică") OR "previziune poliție" OR "recunoaşterea facială"',
 		"rss_feeds": []
 	},
 	{
@@ -82,12 +81,12 @@ countries = [
 	},
 	{
 		"name": "Spanish",
-		"twitter_query": '("decisión" AND "algoritmo")  OR ("política" AND "algoritmo")  OR "policía predictiva"',
+		"twitter_query": '("decisión" AND "algoritmo")  OR ("política" AND "algoritmo")  OR "policía predictiva" OR "reconocimiento facial"',
 		"rss_feeds": []
 	},
 	{
 		"name": "Swedish",
-		"twitter_query": '("beslut" AND "algoritm")  OR ("politik" AND "algoritm")  OR "prediktiv polis"',
+		"twitter_query": '("beslut" AND "algoritm")  OR ("politik" AND "algoritm")  OR "prediktiv polis" OR "ansiktsigenkänning"',
 		"rss_feeds": []
 	 }
 ]
