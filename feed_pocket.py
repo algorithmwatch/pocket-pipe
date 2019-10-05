@@ -97,37 +97,32 @@ blacklisted_urls = [
   "https://twitter.com"	             # Embedded tweets
 ]
 
-def dbInit():
-    if 'CLEARDB_DATABASE_URL' in os.environ:
-        url = urlparse.urlparse(os.environ['CLEARDB_DATABASE_URL'])
-        db = peewee.MySQLDatabase(url.path[1:], host=url.hostname, user=url.username, passwd=url.password)
-    else:
-        db = SqliteExtDatabase('links.db')
+if 'CLEARDB_DATABASE_URL' in os.environ:
+    url = urlparse.urlparse(os.environ['CLEARDB_DATABASE_URL'])
+    db = peewee.MySQLDatabase(url.path[1:], host=url.hostname, user=url.username, passwd=url.password)
+else:
+    db = SqliteExtDatabase('links.db')
 
-    class BaseModel(Model):
-        class Meta:
-            database = db
+class BaseModel(Model):
+    class Meta:
+        database = db
 
-    class Link(BaseModel):
-        url = CharField()
+class Link(BaseModel):
+    url = CharField()
 
-        class Meta:
-            primary_key = CompositeKey('url')
+    class Meta:
+        primary_key = CompositeKey('url')
 
-    db.connect(reuse_if_open=True)
-    db.create_tables([Link], safe=True)
+db.connect(reuse_if_open=True)
+db.create_tables([Link], safe=True)
 
-    return Link
 
 def checkDuplicate(link):
-    Link = dbInit()
     try:
         Link.create(url = link)
-        db.close()
         return True
 
     except IntegrityError:
-    	db.close()
         return False
         pass
 
