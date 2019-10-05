@@ -123,9 +123,11 @@ def checkDuplicate(link):
     Link = dbInit()
     try:
         Link.create(url = link)
+        db.close()
         return True
 
     except IntegrityError:
+    	db.close()
         return False
         pass
 
