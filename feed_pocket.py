@@ -165,7 +165,13 @@ def checkTwitter():
 			if "urls" in tweet["entities"]:
 				for url in tweet["entities"]["urls"]:
 					if not any(x in url["expanded_url"] for x in blacklisted_urls):
-						urls.append({"url": url["expanded_url"], "country_tag": country["name"]})
+						# Remove anything after the ? in the URL (can contain twitter or FB details)
+						url = url["expanded_url"].split('?', 1)[0]
+						# Reject domains, i.e. URLS with less than 4 / (because http://domain.tld/)
+						if url.count('/') <= 3:
+							pass
+						else:
+							urls.append({"url": url["expanded_url"], "country_tag": country["name"]})
 
 	return urls
 
