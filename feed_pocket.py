@@ -22,71 +22,73 @@ max_articles = 100
 countries = [
 	{
 		"name": "Czech",
-		"twitter_query": '("politika" AND "algoritmus")  OR ("rozhodnutí" AND "algoritmus")  OR "prediktivní policie" OR "rozpoznávání tváře"',
+		"twitter_query": '("politika" AND "algoritmus")  OR ("rozhodnutí" AND "algoritmus")  OR "prediktivní policie" OR "rozpoznávání tváře" -Čína',
 		"rss_feeds": []
 	},
 	{
 		"name": "Danish",
-		"twitter_query": '("afgørelse" AND "algoritme")  OR ("politik" AND "algoritme")  OR "forudsigeligt politi" OR "ansigtsgenkendelse"',
+		"twitter_query": '("afgørelse" AND "algoritme")  OR ("politik" AND "algoritme")  OR "forudsigeligt politi" OR "ansigtsgenkendelse" -kina',
 		"rss_feeds": []
 	},
 	{
 		"name": "Dutch",
-		"twitter_query": '("besluit" AND "algoritme")  OR ("politiek" AND "algoritme")  OR "voorspellende politie" OR "Gezichtsherkenning"',
+		"twitter_query": '("besluit" AND "algoritme")  OR ("politiek" AND "algoritme")  OR "voorspellende politie" OR "Gezichtsherkenning" -china',
 		"rss_feeds": []
 	},
 	{
 		"name": "English",
-		"twitter_query": '"automated decision making" OR "automated decision-making" OR "algocracy"  OR "algorithmic governance" OR ("AI" and "job interview")',
+		"twitter_query": '"automated decision making" OR "automated decision-making" OR "algocracy"  OR "algorithmic governance" OR ("AI" and "job interview") -china',
 		"rss_feeds": []
 	},
 	{
 		"name": "French",
-		"twitter_query": '("algorithme" AND "travail") OR ("politique" AND "algorithme")  OR "police prédictive" OR "décision automatisée" OR "reconnaissance faciale"',
+		"twitter_query": '("algorithme" AND "travail") OR ("politique" AND "algorithme")  OR "police prédictive" OR "décision automatisée" OR "reconnaissance faciale" -chine',
 		"rss_feeds": [
 			"https://technopolice.fr/feed/"
 		]
 	},
 	{
 		"name": "German",
-		"twitter_query": '("algorithmen" AND "arbeitsmarkt") OR ("algorithmen" AND "politik")  OR ("entscheidung" AND "algorithmus") OR "Gesichtserkennung"',
-		"rss_feeds": []
+		"twitter_query": '("algorithmen" AND "arbeitsmarkt") OR ("algorithmen" AND "politik")  OR ("entscheidung" AND "algorithmus") OR "Gesichtserkennung" -china',
+		"rss_feeds": [
+			"https://algorithmenethik.de/feed/"
+		]
 	},
 	{
 		"name": "Hungarian",
-		"twitter_query": '("automatizált" AND "algoritmus")  OR ("döntés" AND "algoritmus")  OR "prediktív rendőrség" OR "arcfelismerő"',
+		"twitter_query": '("automatizált" AND "algoritmus")  OR ("döntés" AND "algoritmus")  OR "prediktív rendőrség" OR "arcfelismerő" -Kína',
 		"rss_feeds": []
 	},
 	{
 		"name": "Italian",
-		"twitter_query": '("algoritmo" AND "decisione")  OR ("algoritmo" AND "politica") OR "polizia predittiva" OR "riconoscimento facciale"',
+		"twitter_query": '("algoritmo" AND "decisione")  OR ("algoritmo" AND "politica") OR "polizia predittiva" OR "riconoscimento facciale" -cina',
 		"rss_feeds": []
 	},
 	{
 		"name": "Polish",
-		"twitter_query": '("algorytm" AND "decyzja")  OR ("algorytm" AND "polityka") OR "prognozowanie policji" OR "rozpoznawania rysów twarzy"',
+		"twitter_query": '("algorytm" AND "decyzja")  OR ("algorytm" AND "polityka") OR "prognozowanie policji" OR "rozpoznawania rysów twarzy" -Chiny',
 		"rss_feeds": [
 			"https://www.sztucznainteligencja.org.pl/tematy/ludzie/spoleczenstwo/feed/"
 		]
 	},
 	{
 		"name": "Romanian",
-		"twitter_query": '("algoritmul" AND "decizie")  OR ("algoritmul" AND "politică") OR "previziune poliție" OR "recunoaşterea facială"',
+		"twitter_query": '("algoritmul" AND "decizie")  OR ("algoritmul" AND "politică") OR "previziune poliție" OR "recunoaşterea facială" -china',
 		"rss_feeds": []
 	},
 	{
 		"name": "Slovak",
-		"twitter_query": '("politický" AND "algoritmus")  OR ("rozhodnutie" AND "algoritmus") OR "prediktívne policajné"',
+		"twitter_query": '("politický" AND "algoritmus")  OR ("rozhodnutie" AND "algoritmus") OR "prediktívne policajné" -Čína',
 		"rss_feeds": []
 	},
 	{
 		"name": "Spanish",
-		"twitter_query": '("decisión" AND "algoritmo")  OR ("política" AND "algoritmo")  OR "policía predictiva" OR "reconocimiento facial"',
+		"twitter_query": '("decisión" AND "algoritmo")  OR ("política" AND "algoritmo")  OR "policía predictiva" OR "reconocimiento facial" -china',
 		"rss_feeds": []
 	},
 	{
 		"name": "Swedish",
-		"twitter_query": '("beslut" AND "algoritm")  OR ("politik" AND "algoritm")  OR "prediktiv polis" OR "ansiktsigenkänning"',
+		"twitter_query": '("beslut" AND "algoritm")  OR ("politik" AND "algoritm")  OR "prediktiv polis" OR "ansiktsigenkänning" -kina',
 		"rss_feeds": []
 	 }
 ]
