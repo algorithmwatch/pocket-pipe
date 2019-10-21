@@ -22,73 +22,73 @@ max_articles = 100
 countries = [
 	{
 		"name": "Czech",
-		"twitter_query": '("politika" AND "algoritmus")  OR ("rozhodnutí" AND "algoritmus")  OR "prediktivní policie" OR "rozpoznávání tváře" -Čína',
+		"twitter_query": '("politika" AND "algoritmus")  OR ("rozhodnutí" AND "algoritmus") OR ("mesto" AND "algoritmus")  OR "prediktivní policie" OR "rozpoznávání tváře" -Čína -Pixel -Samsung',
 		"rss_feeds": []
 	},
 	{
 		"name": "Danish",
-		"twitter_query": '("afgørelse" AND "algoritme")  OR ("politik" AND "algoritme")  OR "forudsigeligt politi" OR "ansigtsgenkendelse" -kina',
+		"twitter_query": '("afgørelse" AND "algoritme") OR ("politik" AND "algoritme") OR ("by" AND "algoritme")  OR "forudsigeligt politi" OR "ansigtsgenkendelse" -kina -Pixel -Samsung',
 		"rss_feeds": []
 	},
 	{
 		"name": "Dutch",
-		"twitter_query": '("besluit" AND "algoritme")  OR ("politiek" AND "algoritme")  OR "voorspellende politie" OR "Gezichtsherkenning" -china',
+		"twitter_query": '("besluit" AND "algoritme") OR ("politiek" AND "algoritme") OR ("stad" AND "algoritme") OR "voorspellende politie" OR "Gezichtsherkenning" -china -Pixel -Samsung',
 		"rss_feeds": []
 	},
 	{
 		"name": "English",
-		"twitter_query": '"automated decision making" OR "automated decision-making" OR "algocracy"  OR "algorithmic governance" OR ("AI" and "job interview") -china',
+		"twitter_query": '"automated decision making" OR "automated decision-making" OR "algocracy" OR "algorithmic governance" OR ("AI" and "job interview") -china -Pixel -Samsung',
 		"rss_feeds": []
 	},
 	{
 		"name": "French",
-		"twitter_query": '("algorithme" AND "travail") OR ("politique" AND "algorithme")  OR "police prédictive" OR "décision automatisée" OR "reconnaissance faciale" -chine',
+		"twitter_query": '("algorithme" AND "travail") OR ("politique" AND "algorithme") OR ("social" AND "algorithme") OR ("ville" AND "algorithme")  OR "police prédictive" OR "décision automatisée" OR "reconnaissance faciale" -chine -Pixel -Samsung',
 		"rss_feeds": [
 			"https://technopolice.fr/feed/"
 		]
 	},
 	{
 		"name": "German",
-		"twitter_query": '("algorithmen" AND "arbeitsmarkt") OR ("algorithmen" AND "politik")  OR ("entscheidung" AND "algorithmus") OR "Gesichtserkennung" -china',
+		"twitter_query": '("algorithmus" AND "arbeitsmarkt") OR ("algorithmus" AND "politik") OR ("algorithmus" AND "stadt") OR ("algorithmus" AND "sozial") OR ("entscheidung" AND "algorithmus") OR "Gesichtserkennung" -china -Pixel -Samsung',
 		"rss_feeds": [
 			"https://algorithmenethik.de/feed/"
 		]
 	},
 	{
 		"name": "Hungarian",
-		"twitter_query": '("automatizált" AND "algoritmus")  OR ("döntés" AND "algoritmus")  OR "prediktív rendőrség" OR "arcfelismerő" -Kína',
+		"twitter_query": '("automatizált" AND "algoritmus")  OR ("döntés" AND "algoritmus") OR ("város" AND "algoritmus")  OR "prediktív rendőrség" OR "arcfelismerő" -Kína -Pixel -Samsung',
 		"rss_feeds": []
 	},
 	{
 		"name": "Italian",
-		"twitter_query": '("algoritmo" AND "decisione")  OR ("algoritmo" AND "politica") OR "polizia predittiva" OR "riconoscimento facciale" -cina',
+		"twitter_query": '("algoritmo" AND "decisione")  OR ("algoritmo" AND "politica") OR ("algoritmo" AND "città") OR "polizia predittiva" OR "riconoscimento facciale" -cina -Pixel -Samsung',
 		"rss_feeds": []
 	},
 	{
 		"name": "Polish",
-		"twitter_query": '("algorytm" AND "decyzja")  OR ("algorytm" AND "polityka") OR "prognozowanie policji" OR "rozpoznawania rysów twarzy" -Chiny',
+		"twitter_query": '("algorytm" AND "decyzja") OR ("algorytm" AND "polityka") OR ("algorytm" AND "miasto") OR "prognozowanie policji" OR "rozpoznawania rysów twarzy" -Chiny -Pixel -Samsung',
 		"rss_feeds": [
 			"https://www.sztucznainteligencja.org.pl/tematy/ludzie/spoleczenstwo/feed/"
 		]
 	},
 	{
 		"name": "Romanian",
-		"twitter_query": '("algoritmul" AND "decizie")  OR ("algoritmul" AND "politică") OR "previziune poliție" OR "recunoaşterea facială" -china',
+		"twitter_query": '("algoritmul" AND "decizie")  OR ("algoritmul" AND "politică") OR ("oraș" AND "algoritmul") OR "previziune poliție" OR "recunoaşterea facială" -china -Pixel -Samsung',
 		"rss_feeds": []
 	},
 	{
 		"name": "Slovak",
-		"twitter_query": '("politický" AND "algoritmus")  OR ("rozhodnutie" AND "algoritmus") OR "prediktívne policajné" -Čína',
+		"twitter_query": '("politický" AND "algoritmus") OR ("rozhodnutie" AND "algoritmus") OR ("mesto" AND "algoritmus") OR "prediktívne policajné" -Čína -Pixel -Samsung',
 		"rss_feeds": []
 	},
 	{
 		"name": "Spanish",
-		"twitter_query": '("decisión" AND "algoritmo")  OR ("política" AND "algoritmo")  OR "policía predictiva" OR "reconocimiento facial" -china',
+		"twitter_query": '("decisión" AND "algoritmo") OR ("política" AND "algoritmo") OR ("ciudad" AND "algoritmo") OR "policía predictiva" OR "reconocimiento facial" -china -Pixel -Samsung',
 		"rss_feeds": []
 	},
 	{
 		"name": "Swedish",
-		"twitter_query": '("beslut" AND "algoritm")  OR ("politik" AND "algoritm")  OR "prediktiv polis" OR "ansiktsigenkänning" -kina',
+		"twitter_query": '("beslut" AND "algoritm") OR ("politik" AND "algoritm") OR ("stad" AND "algoritm") OR "prediktiv polis" OR "ansiktsigenkänning" -kina -Pixel -Samsung',
 		"rss_feeds": []
 	 }
 ]
@@ -97,6 +97,7 @@ countries = [
 # Removing Twitter ensures that you won't be given linked tweets.
 blacklisted_urls = [
   "https://twitter.com"	             # Embedded tweets
+  "https://freie-welt.eu"			 # Probably a content farm
 ]
 
 if 'CLEARDB_DATABASE_URL' in os.environ:
