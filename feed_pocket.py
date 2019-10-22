@@ -96,8 +96,8 @@ countries = [
 # List of websites that you do not want to read from.
 # Removing Twitter ensures that you won't be given linked tweets.
 blacklisted_urls = [
-  "https://twitter.com"	             # Embedded tweets
- ,"https://freie-welt.eu"			 # Probably a content farm
+  "twitter.com"	             # Embedded tweets
+ ,"freie-welt.eu"			 # Probably a content farm
 ]
 
 if 'CLEARDB_DATABASE_URL' in os.environ:
