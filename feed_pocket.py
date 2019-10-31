@@ -42,14 +42,14 @@ countries = [
 	},
 	{
 		"name": "French",
-		"twitter_query": '("algorithme" AND "travail") OR ("politique" AND "algorithme") OR ("social" AND "algorithme") OR ("ville" AND "algorithme")  OR "police prédictive" OR "décision automatisée" OR "reconnaissance faciale" -chine -Pixel -Samsung',
+		"twitter_query": '("algorithme" AND "travail") OR ("politique" AND "algorithme") OR ("social" AND "algorithme") OR ("ville" AND "algorithme")  OR "police prédictive" OR "décision automatisée" -chine -Pixel -Samsung',
 		"rss_feeds": [
 			"https://technopolice.fr/feed/"
 		]
 	},
 	{
 		"name": "German",
-		"twitter_query": '("algorithmus" AND "arbeitsmarkt") OR ("algorithmus" AND "politik") OR ("algorithmus" AND "stadt") OR ("algorithmus" AND "sozial") OR ("entscheidung" AND "algorithmus") OR "Gesichtserkennung" -china -Pixel -Samsung',
+		"twitter_query": '("algorithmus" AND "arbeitsmarkt") OR ("algorithmus" AND "politik") OR ("algorithmus" AND "stadt") OR ("algorithmus" AND "sozial") OR ("entscheidung" AND "algorithmus") -china -Pixel -Samsung',
 		"rss_feeds": [
 			"https://algorithmenethik.de/feed/"
 		]
@@ -61,14 +61,14 @@ countries = [
 	},
 	{
 		"name": "Italian",
-		"twitter_query": '("algoritmo" AND "decisione")  OR ("algoritmo" AND "politica") OR ("algoritmo" AND "città") OR "polizia predittiva" OR "riconoscimento facciale" -cina -Pixel -Samsung',
+		"twitter_query": '("algoritmo" AND "decisione")  OR ("algoritmo" AND "politica") OR ("algoritmo" AND "città") OR "polizia predittiva" -cina -Pixel -Samsung',
 		"rss_feeds": []
 	},
 	{
 		"name": "Polish",
 		"twitter_query": '("algorytm" AND "decyzja") OR ("algorytm" AND "polityka") OR ("algorytm" AND "miasto") OR "prognozowanie policji" OR "rozpoznawania rysów twarzy" -Chiny -Pixel -Samsung',
 		"rss_feeds": [
-			"https://www.sztucznainteligencja.org.pl/tematy/ludzie/spoleczenstwo/feed/"
+			# "https://www.sztucznainteligencja.org.pl/tematy/ludzie/spoleczenstwo/feed/"
 		]
 	},
 	{
@@ -83,7 +83,7 @@ countries = [
 	},
 	{
 		"name": "Spanish",
-		"twitter_query": '("decisión" AND "algoritmo") OR ("política" AND "algoritmo") OR ("ciudad" AND "algoritmo") OR "policía predictiva" OR "reconocimiento facial" -china -Pixel -Samsung',
+		"twitter_query": '("decisión" AND "algoritmo") OR ("política" AND "algoritmo") OR ("ciudad" AND "algoritmo") OR "policía predictiva" -china -Pixel -Samsung',
 		"rss_feeds": []
 	},
 	{
@@ -98,6 +98,9 @@ countries = [
 blacklisted_urls = [
   "twitter.com"	             # Embedded tweets
  ,"freie-welt.eu"			 # Probably a content farm
+ ,"stohl.de"				 # Looks like automated link collection 
+ ,"tweetedtimes.com"		 # List of links
+ ,"linkedin.com"			 # Never read something interesting there
 ]
 
 if 'CLEARDB_DATABASE_URL' in os.environ:
