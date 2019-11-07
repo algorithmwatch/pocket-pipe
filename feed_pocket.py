@@ -125,6 +125,8 @@ db.create_tables([Link], safe=True)
 
 def checkDuplicate(link):
     try:
+    	# Shorten link to 255 chars
+    	link = link[:254]
         Link.create(url = link)
         return True
 
