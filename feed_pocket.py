@@ -68,6 +68,7 @@ countries = [
 		"name": "Polish",
 		"twitter_query": '("algorytm" AND "decyzja") OR ("algorytm" AND "polityka") OR ("algorytm" AND "miasto") OR "prognozowanie policji" OR "rozpoznawania rysów twarzy" -Chiny -Pixel -Samsung',
 		"rss_feeds": [
+			"https://epf.org.pl/en/projects/feed/"
 			# "https://www.sztucznainteligencja.org.pl/tematy/ludzie/spoleczenstwo/feed/"
 		]
 	},
