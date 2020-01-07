@@ -37,7 +37,7 @@ countries = [
 	},
 	{
 		"name": "English",
-		"twitter_query": '"automated decision making" OR "automated decision-making" OR "algocracy" OR "algorithmic governance" OR ("AI" and "job interview") -china -Pixel -Samsung',
+		"twitter_query": '"iborderctrl" OR "automated decision making" OR "automated decision-making" OR "algocracy" OR "algorithmic governance" OR ("AI" and "job interview") -china -Pixel -Samsung',
 		"rss_feeds": []
 	},
 	{
