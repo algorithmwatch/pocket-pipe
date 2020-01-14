@@ -33,7 +33,9 @@ countries = [
 	{
 		"name": "Dutch",
 		"twitter_query": '("besluit" AND "algoritme") OR ("politiek" AND "algoritme") OR ("stad" AND "algoritme") OR "voorspellende politie" OR "Gezichtsherkenning" OR "risicoprofilering" -china -Pixel -Samsung',
-		"rss_feeds": []
+		"rss_feeds": [
+			"https://bijvoorbaatverdacht.nl/feed/"
+		]
 	},
 	{
 		"name": "English",
