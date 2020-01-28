@@ -111,6 +111,7 @@ blacklisted_urls = [
  ,"stohl.de"				 # Looks like automated link collection 
  ,"tweetedtimes.com"		 # List of links
  ,"linkedin.com"			 # Never read something interesting there
+ ,"newslocker.com"		     # Low quality aggregator
 ]
 
 if 'CLEARDB_DATABASE_URL' in os.environ:
