@@ -85,6 +85,13 @@ countries = [
 		"rss_feeds": []
 	},
 	{
+		"name": "Serbian",
+		"twitter_query": '("алгоритам" AND "политичка") OR ("вештачка интелигенција" AND "град") OR ("Србија" AND "вештачка интелигенција") OR "предвидивање полиције" -Кина -Pixel -Samsung',
+		"rss_feeds": [
+			"https://www.sharefoundation.info/en/category/news/feed/"
+		]
+	},
+	{
 		"name": "Spanish",
 		"twitter_query": '("decisión" AND "algoritmo") OR ("política" AND "algoritmo") OR ("ciudad" AND "algoritmo") OR "policía predictiva" -china -Pixel -Samsung',
 		"rss_feeds": []
