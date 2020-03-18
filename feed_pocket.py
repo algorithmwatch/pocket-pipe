@@ -22,12 +22,12 @@ max_articles = 100
 countries = [
 	{
 		"name": "Czech",
-		"twitter_query": '("politika" AND "algoritmus")  OR ("rozhodnutí" AND "algoritmus") OR ("mesto" AND "algoritmus")  OR "prediktivní policie" OR "rozpoznávání tváře" -Čína -Pixel -Samsung',
+		"twitter_query": '("Covid" AND "algoritmus") OR ("politika" AND "algoritmus")  OR ("rozhodnutí" AND "algoritmus") OR ("mesto" AND "algoritmus")  OR "prediktivní policie" OR "rozpoznávání tváře" -Čína -Pixel -Samsung',
 		"rss_feeds": []
 	},
 	{
 		"name": "Danish",
-		"twitter_query": '("afgørelse" AND "algoritme") OR ("politik" AND "algoritme") OR ("by" AND "algoritme")  OR "forudsigeligt politi" OR "ansigtsgenkendelse" -kina -Pixel -Samsung',
+		"twitter_query": '("Covid" AND "algoritme") OR ("afgørelse" AND "algoritme") OR ("politik" AND "algoritme") OR ("by" AND "algoritme")  OR "forudsigeligt politi" OR "ansigtsgenkendelse" -kina -Pixel -Samsung',
 		"rss_feeds": []
 	},
 	{
@@ -39,31 +39,31 @@ countries = [
 	},
 	{
 		"name": "English",
-		"twitter_query": '"iborderctrl" OR "automated decision making" OR "automated decision-making" OR "algocracy" OR "algorithmic governance" OR ("AI" and "job interview") -china -Pixel -Samsung',
+		"twitter_query": '("Covid" AND "automated") OR "iborderctrl" OR "automated decision making" OR "automated decision-making" OR "algocracy" OR "algorithmic governance" OR ("AI" and "job interview") -china -Pixel -Samsung',
 		"rss_feeds": []
 	},
 	{
 		"name": "French",
-		"twitter_query": '("algorithme" AND "travail") OR ("politique" AND "algorithme") OR ("social" AND "algorithme") OR ("ville" AND "algorithme")  OR "police prédictive" OR "décision automatisée" -chine -Pixel -Samsung',
+		"twitter_query": '("algorithme" AND "Covid") OR ("automatisé" AND "Covid") OR ("algorithme" AND "travail") OR ("politique" AND "algorithme") OR ("social" AND "algorithme") OR ("ville" AND "algorithme")  OR "police prédictive" OR "décision automatisée" -chine -Pixel -Samsung',
 		"rss_feeds": [
 			"https://technopolice.fr/feed/"
 		]
 	},
 	{
 		"name": "German",
-		"twitter_query": '("algorithmus" AND "arbeitsmarkt") OR ("algorithmus" AND "politik") OR ("algorithmus" AND "stadt") OR ("algorithmus" AND "sozial") OR ("entscheidung" AND "algorithmus") -china -Pixel -Samsung',
+		"twitter_query": '("algorithmus" AND "Covid") OR ("algorithmus" AND "arbeitsmarkt") OR ("algorithmus" AND "politik") OR ("algorithmus" AND "stadt") OR ("algorithmus" AND "sozial") OR ("entscheidung" AND "algorithmus") -china -Pixel -Samsung',
 		"rss_feeds": [
 			"https://algorithmenethik.de/feed/"
 		]
 	},
 	{
 		"name": "Hungarian",
-		"twitter_query": '("automatizált" AND "algoritmus")  OR ("döntés" AND "algoritmus") OR ("város" AND "algoritmus")  OR "prediktív rendőrség" OR "arcfelismerő" -Kína -Pixel -Samsung',
+		"twitter_query": '("automatizált" AND "Covid") OR ("automatizált" AND "algoritmus")  OR ("döntés" AND "algoritmus") OR ("város" AND "algoritmus")  OR "prediktív rendőrség" OR "arcfelismerő" -Kína -Pixel -Samsung',
 		"rss_feeds": []
 	},
 	{
 		"name": "Italian",
-		"twitter_query": '("algoritmo" AND "decisione")  OR ("algoritmo" AND "politica") OR ("algoritmo" AND "città") OR "polizia predittiva" -cina -Pixel -Samsung',
+		"twitter_query": '("algoritmo" AND "Covid") OR ("algoritmo" AND "decisione")  OR ("algoritmo" AND "politica") OR ("algoritmo" AND "città") OR "polizia predittiva" -cina -Pixel -Samsung',
 		"rss_feeds": []
 	},
 	{
