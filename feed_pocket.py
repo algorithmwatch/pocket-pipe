@@ -54,6 +54,7 @@ countries = [
 		"twitter_query": '("algorithmus" AND "Covid") OR ("algorithmus" AND "arbeitsmarkt") OR ("algorithmus" AND "politik") OR ("algorithmus" AND "stadt") OR ("algorithmus" AND "sozial") OR ("entscheidung" AND "algorithmus") -china -Pixel -Samsung',
 		"rss_feeds": [
 			"https://algorithmenethik.de/feed/"
+		   ,"https://politicalinfluencers.wordpress.com/feed/"
 		]
 	},
 	{
@@ -112,6 +113,7 @@ blacklisted_urls = [
  ,"tweetedtimes.com"		 # List of links
  ,"linkedin.com"			 # Never read something interesting there
  ,"newslocker.com"		     # Low quality aggregator
+ ,"medrxiv.org"              # Too many preprints
 ]
 
 if 'CLEARDB_DATABASE_URL' in os.environ:
